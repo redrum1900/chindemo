@@ -59,10 +59,14 @@ app.use(function(err, req, res, next) {
 
 var wechat = require('wechat');
 var config = {
-  token: 'ispace',
-  appid: 'appid6ll4i8b9mb',
+  token: 'aa45f82c8ad36068f4dc451195edebfa',
+  appid: 'wx28e6cf9184a54fee',
   encodingAESKey: 'sCiOMpLRU40ebQiBfNyGVvoPqVogRhcqfEoc6Ed2NmM'
 };
+
+app.use('/ww',function(){
+  res.send('test');
+})
 
 app.use(express.query());
 app.use('/wechat', wechat(config, function (req, res, next) {
