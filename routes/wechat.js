@@ -47,10 +47,10 @@ router.use(express.query());
 router.use('/wechat', wechat(config, function (req, res, next) {
   // 微信输入信息都在req.weixin上
   var message = req.weixin;
-  if (message.FromUserName === 'diaosi') {
+  if (message.Content === '2b') {
     // 回复屌丝(普通回复)
     res.reply('hehe');
-  } else if (message.FromUserName === 'text') {
+  } else if (message.MsgType === 'text') {
     //你也可以这样回复text类型的信息
     res.reply({
       content: 'text object',
