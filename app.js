@@ -61,8 +61,8 @@ app.use(function(err, req, res, next) {
 
 var wechat = require('wechat');
 var config = {
-  token: 'aa45f82c8ad36068f4dc451195edebfa',
-  appid: 'ushinchin',
+  token: 'ushinchin',
+  appid: 'aa45f82c8ad36068f4dc451195edebfa',
   encodingAESKey: 'sCiOMpLRU40ebQiBfNyGVvoPqVogRhcqfEoc6Ed2NmM'
 };
 
