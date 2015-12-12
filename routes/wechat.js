@@ -50,7 +50,7 @@ router.use('/wechat', wechat(config, function (req, res, next) {
   if (message.Content === '高宁') {
     // 回复屌丝(普通回复)
     res.reply('高宁是2b');
-  } else (message.Content === 'text') {
+  } else {
     //你也可以这样回复text类型的信息
     res.reply('高宁是'+message.Content);
   } 
