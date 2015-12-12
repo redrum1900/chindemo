@@ -6,12 +6,15 @@ var token = "ushinchin"; //此处需要你自己修改！
 
 router.get('getwechat',function(req, res, next){
 	var signature = req.query.signature;
+	console.log(signature);
    var timestamp = req.query.timestamp;
+   console.log(timestamp);
    var nonce = req.query.nonce;
+   console.log(nonce);
    var echostr = req.query.echostr;
+   console.log(echostr);
    /*  加密/校验流程如下： */
    //1. 将token、timestamp、nonce三个参数进行字典序排序
-   console.log(token);
    var array = new Array(token,timestamp,nonce);
    array.sort();
    var str = array.toString().replace(/,/g,"");
