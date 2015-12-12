@@ -4,7 +4,7 @@ var router = express.Router();
 var crypto = require('crypto');
 var token = "ushinchin"; //此处需要你自己修改！
 
-router.get('getwechat',function(req, res, next){
+router.get('/getwechat',function(req, res, next){
 	var signature = req.query.signature;
 	console.log(signature);
    var timestamp = req.query.timestamp;
@@ -31,5 +31,9 @@ router.get('getwechat',function(req, res, next){
       res.send(echostr);
    }
 });
+
+router.get('/getdata',function(){
+	res.send('no data');
+})
 
 module.exports = router;
