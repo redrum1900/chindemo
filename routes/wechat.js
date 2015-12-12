@@ -25,7 +25,7 @@ router.get('getwechat',function(req, res, next){
    if(code===signature){
       res.send(echostr)
    }else{
-      res.send("error");
+      res.send(echostr);
    }
 });
 
