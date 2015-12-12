@@ -52,7 +52,7 @@ router.use('/wechat', wechat(config, function (req, res, next) {
     res.reply('高宁是2b');
   } else {
     //你也可以这样回复text类型的信息
-    res.reply('高宁是'+message.Content);
+    res.reply(message.ToUserName+'是'+message.Content);
   } 
   // else if (message.Content === 'hehe') {
   //   // 回复一段音乐
