@@ -50,13 +50,13 @@ router.use('/wechat', wechat(config, function (req, res, next) {
   if (message.Content === '2b') {
     // 回复屌丝(普通回复)
     res.reply('hehe');
-  } else if (message.MsgType === 'text') {
+  } else if (message.Content === 'text') {
     //你也可以这样回复text类型的信息
     res.reply({
       content: 'text object',
       type: 'text'
     });
-  } else if (message.FromUserName === 'hehe') {
+  } else if (message.Content === 'hehe') {
     // 回复一段音乐
     res.reply({
       type: "music",
