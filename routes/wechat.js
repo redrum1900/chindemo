@@ -23,9 +23,9 @@ router.get('getwechat',function(req, res, next){
    var code = sha1Code.update(str,'utf-8').digest("hex");
    //3. 开发者获得加密后的字符串可与signature对比，标识该请求来源于微信
    if(code===signature){
-      res.send(echostr)
+      res.send('true')
    }else{
-      res.send(echostr);
+      res.send("false");
    }
 });
 
