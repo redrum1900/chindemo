@@ -64,7 +64,7 @@ var config = {
   encodingAESKey: 'sCiOMpLRU40ebQiBfNyGVvoPqVogRhcqfEoc6Ed2NmM'
 };
 
-app.use('/ww',function(){
+app.get('/ww',function(){
   res.send('test');
 })
 
