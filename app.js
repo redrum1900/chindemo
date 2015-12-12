@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var getwechat = require('./routes/wechat')
 
 var app = express();
 
@@ -24,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/',getwechat);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -60,16 +62,12 @@ app.use(function(err, req, res, next) {
 var wechat = require('wechat');
 var config = {
   token: 'aa45f82c8ad36068f4dc451195edebfa',
-  appid: 'wx28e6cf9184a54fee',
+  appid: 'ushinchin',
   encodingAESKey: 'sCiOMpLRU40ebQiBfNyGVvoPqVogRhcqfEoc6Ed2NmM'
 };
 
-app.get('/ww',function(){
-  res.send('test');
-})
-
 app.use(express.query());
-app.use('/wechat', wechat(config, function (req, res, next) {
+app.use('/wechat', wechat(config.token, function (req, res, next) {
   // 微信输入信息都在req.weixin上
   var message = req.weixin;
   if (message.FromUserName === 'diaosi') {
