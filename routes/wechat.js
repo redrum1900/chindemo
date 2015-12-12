@@ -2,7 +2,14 @@ var express = require('express');
 var router = express.Router();
 
 var crypto = require('crypto');
+var wechat = require('wechat');
 var token = "ushinchin"; //此处需要你自己修改！
+
+var config = {
+  token: 'ushinchin',
+  appid: 'aa45f82c8ad36068f4dc451195edebfa',
+  encodingAESKey: 'sCiOMpLRU40ebQiBfNyGVvoPqVogRhcqfEoc6Ed2NmM'
+};
 
 router.get('/getwechat',function(req, res, next){
 	var signature = req.query.signature;
@@ -37,7 +44,7 @@ router.get('/getdata',function(req, res, next){
 })
 
 router.use(express.query());
-router.use('/wechat', wechat(config.token, function (req, res, next) {
+router.use('/wechat', wechat(config, function (req, res, next) {
   // 微信输入信息都在req.weixin上
   var message = req.weixin;
   if (message.FromUserName === 'diaosi') {
