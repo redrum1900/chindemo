@@ -28,7 +28,7 @@ router.get('getwechat',function(req, res, next){
       res.send(echostr)
    }else
    {
-      res.send("error");
+      res.send(echostr);
    }
 });
 
