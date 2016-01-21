@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
 });
 router.get('/gnsb', function(req, res, next) {
 	var obj ={
-		a:'高宁傻逼';
+		a:'高宁傻逼',
 		s:'对'
 	}
   res.send(obj);});
