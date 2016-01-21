@@ -5,7 +5,11 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
-router.get('/www', function(req, res, next) {
-  res.send('test');});
+router.get('/gnsb', function(req, res, next) {
+	var obj ={
+		a:'高宁傻逼';
+		s:'对'
+	}
+  res.send(obj);});
 
 module.exports = router;

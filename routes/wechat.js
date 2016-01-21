@@ -3,6 +3,7 @@ var router = express.Router();
 
 var crypto = require('crypto');
 var wechat = require('wechat');
+
 var token = "ushinchin"; //此处需要你自己修改！
 
 var config = {
@@ -10,6 +11,14 @@ var config = {
   appid: 'aa45f82c8ad36068f4dc451195edebfa',
   encodingAESKey: 'sCiOMpLRU40ebQiBfNyGVvoPqVogRhcqfEoc6Ed2NmM'
 };
+
+var appid = 'wxdd7488e978f89a4a';
+var appsecret = 'd4624c36b6795d1d99dcf0547af5443d';
+
+
+
+
+
 
 router.get('/getwechat',function(req, res, next){
 	var signature = req.query.signature;
@@ -78,5 +87,7 @@ router.use('/wechat', wechat(config, function (req, res, next) {
   //   ]);
   // }
 }));
+
+	
 
 module.exports = router;
